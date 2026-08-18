@@ -1,0 +1,56 @@
+[
+  {
+    "output": "```json\n[\n  \"Victorian novel\",\n  \"domestic space\",\n  \"social mobility\",\n  \"gender hierarchies\",\n  \"nineteenth-century Britain\",\n  \"parlors\",\n  \"bedrooms\",\n  \"drawing rooms\",\n  \"George Eliot\",\n  \"the Bront\u00ebs\",\n  \"women's agency\",\n  \"economic dependence\",\n  \"architectural minutiae\",\n  \"moral virtue\",\n  \"interior decoration\",\n  \"household management\",\n  \"industrial revolution\",\n  \"rural populations\",\n  \"urban anxieties\",\n  \"heroines\",\n  \"inherited social codes\",\n  \"spatial constraint\",\n  \"economic precarity\",\n  \"moral authenticity\",\n  \"novel form\",\n  \"public ideology\",\n  \"private experience\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "The Victorian novel's preoccupation with domestic space reveals deeper anxieties about social mobility and gender hierarchies that structured nineteenth-century Britain. Through detailed descriptions of parlors, bedrooms, and drawing rooms, authors like George Eliot and the Bront\u00ebs encoded questions about women's agency and economic dependence within architectural minutiae. The carefully maintained home became a site of both refuge and confinement, where moral virtue was performed through interior decoration and household management. Meanwhile, the industrial revolution's displacement of rural populations created new urban anxieties that novelists addressed obliquely through their heroines' struggles to navigate inherited social codes in rapidly changing circumstances. These interwoven concerns\u2014spatial constraint, economic precarity, and moral authenticity\u2014manifest across the period's most celebrated works, suggesting that the novel form itself emerged partly as a medium through which to interrogate the contradictions between public ideology and private experience."
+      },
+      "solution_criteria": [
+        "Extracts both explicit topics (Victorian novel, domestic space, industrial revolution) and implicit themes (social mobility, gender hierarchies, moral authenticity) that require contextual inference",
+        "Identifies overlapping concepts as separate key topics (e.g., home as both refuge and confinement should be recognized as distinct thematic elements)",
+        "Includes author references and period-specific contexts (George Eliot, Bront\u00ebs, nineteenth-century Britain) as relevant topics",
+        "Returns results as a JSON array of strings with no extraneous formatting or explanatory text"
+      ],
+      "task_description": "\nExtract all key topics out of a passage of text from a scholarly article into a JSON array of strings\n",
+      "scenario": "Testing with a humanities passage containing overlapping concepts and implicit themes, where key topics must be inferred from context rather than appearing as explicit terms"
+    },
+    "score": 8,
+    "reasoning": "The solution fully satisfies all mandatory requirements by providing a properly formatted JSON array of strings containing only topic names with no extra commentary. It demonstrates strong performance on secondary criteria by extracting both explicit and implicit themes, including author names and historical context. However, it has minor deficiencies in recognizing overlapping concepts as truly distinct thematic elements (the home's dual nature as refuge and confinement) and includes some items that are more illustrative examples than independent key topics. These are relatively minor issues that don't undermine the overall quality of the extraction."
+  },
+  {
+    "output": "```json\n[\n  \"machine learning algorithms\",\n  \"neuroimaging data\",\n  \"neuroplasticity\",\n  \"stroke rehabilitation\",\n  \"functional magnetic resonance imaging\",\n  \"fMRI\",\n  \"diffusion tensor imaging\",\n  \"DTI\",\n  \"white matter tract integrity\",\n  \"cortical reorganization\",\n  \"motor recovery\",\n  \"convolutional neural network\",\n  \"brain scans\",\n  \"motor outcome trajectories\",\n  \"graph-theoretic network analysis\",\n  \"functional connectivity\",\n  \"sensorimotor cortex\",\n  \"transcranial magnetic stimulation\",\n  \"TMS\",\n  \"corticospinal excitability\",\n  \"mixed-effects modeling\",\n  \"Fugl-Meyer scores\",\n  \"white matter reorganization\",\n  \"biomarker\",\n  \"functional recovery\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "This study employs a multi-modal approach integrating machine learning algorithms with neuroimaging data to investigate neuroplasticity mechanisms in stroke rehabilitation. We utilized functional magnetic resonance imaging (fMRI) combined with diffusion tensor imaging (DTI) to map white matter tract integrity and cortical reorganization patterns across 120 patients over a 12-week motor recovery protocol. Our convolutional neural network architecture, trained on 50,000 annotated brain scans, achieved 94.2% accuracy in predicting motor outcome trajectories. Additionally, we applied graph-theoretic network analysis to quantify changes in functional connectivity within the sensorimotor cortex, supplemented by transcranial magnetic stimulation (TMS) to assess corticospinal excitability. Statistical analysis using mixed-effects modeling revealed significant correlations between DTI metrics, fMRI activation patterns, and clinical Fugl-Meyer scores, suggesting that early white matter reorganization serves as a biomarker for long-term functional recovery."
+      },
+      "solution_criteria": [
+        "Extracts all primary research areas (neuroplasticity, stroke rehabilitation, machine learning, neuroimaging)",
+        "Captures domain-specific methodologies and techniques (fMRI, DTI, CNN, TMS, graph-theoretic analysis)",
+        "Identifies secondary topics and measured outcomes (motor recovery, cortical reorganization, functional connectivity, biomarkers)",
+        "Returns output as a valid JSON array of strings with no duplicate entries"
+      ],
+      "task_description": "\nExtract all key topics out of a passage of text from a scholarly article into a JSON array of strings\n",
+      "scenario": "Testing with a highly technical scientific abstract containing domain-specific jargon, multiple methodologies, and nested subtopics to verify accurate extraction of both primary and secondary research areas"
+    },
+    "score": 9,
+    "reasoning": "The solution fully satisfies all mandatory requirements: it is a valid JSON array of strings containing topics from the passage with no extra commentary. It meets all secondary criteria by capturing primary research areas, domain-specific methodologies, and secondary topics/outcomes with no duplicates. The inclusion of both acronyms and their expansions (fMRI/functional magnetic resonance imaging) represents a minor stylistic choice rather than a deficiency\u2014both forms are legitimate topic extractions from the text. The extraction is thorough and well-organized, covering the full scope of the scholarly article's content."
+  },
+  {
+    "output": "```json\n[\n  \"environmental governance\",\n  \"behavioral economics\",\n  \"cognitive biases\",\n  \"policy compliance\",\n  \"UNFCCC\",\n  \"carbon pricing mechanisms\",\n  \"prospect theory\",\n  \"climate mitigation targets\",\n  \"ecological systems modeling\",\n  \"Lotka-Volterra equations\",\n  \"network theory\",\n  \"biodiversity loss\",\n  \"Amazon basin\",\n  \"land-use enforcement\",\n  \"neoclassical economics\",\n  \"evolutionary psychology\",\n  \"agent-based computational models\",\n  \"Santa Fe Institute\",\n  \"stakeholder behavior\",\n  \"carbon sequestration\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "Recent advances in environmental governance have increasingly incorporated behavioral economics frameworks, particularly in understanding how cognitive biases affect policy compliance. The UNFCCC's carbon pricing mechanisms interact with Kahneman and Tversky's prospect theory to explain divergent national responses to climate mitigation targets. Meanwhile, ecological systems modeling\u2014rooted in the Lotka-Volterra equations and contemporary network theory\u2014reveals that biodiversity loss in the Amazon basin correlates with institutional weakness in land-use enforcement. The tension between neoclassical economic assumptions and evolutionary psychology perspectives has prompted the development of agent-based computational models, exemplified by the work of the Santa Fe Institute, which simulate how stakeholder behavior influences carbon sequestration outcomes across heterogeneous landscapes."
+      },
+      "solution_criteria": [
+        "Identifies core disciplinary topics (behavioral economics, environmental governance, ecological systems modeling) while excluding supporting theoretical references (Kahneman and Tversky, Lotka-Volterra equations)",
+        "Distinguishes between primary research frameworks and secondary illustrative examples",
+        "Includes acronyms and proper nouns only when they represent key topics (UNFCCC, Santa Fe Institute) rather than citations",
+        "Captures competing theoretical frameworks as distinct topics when they represent central tensions in the passage"
+      ],
+      "task_description": "\nExtract all key topics out of a passage of text from a scholarly article into a JSON array of strings\n",
+      "scenario": "Testing with an interdisciplinary passage mixing social science and natural science terminology, including proper nouns, acronyms, and competing theoretical frameworks to ensure the prompt distinguishes between core topics and supporting references"
+    },
+    "score": 6,
+    "reasoning": "The solution meets all mandatory requirements: it is a valid JSON array of strings with only topic names and no commentary. However, it violates the secondary criteria by including supporting theoretical references (Lotka-Volterra equations, prospect theory) that should be excluded per the explicit instruction to distinguish between 'primary research frameworks and secondary illustrative examples.' The solution also misses the opportunity to recognize the 'tension between neoclassical economic assumptions and evolutionary psychology perspectives' as a distinct, central topic representing competing theoretical frameworks. These are significant deficiencies in applying the stated evaluation criteria, though not mandatory requirement violations."
+  }
+]

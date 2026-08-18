@@ -1,0 +1,41 @@
+[
+  {
+    "prompt_inputs": {
+      "content": "The Victorian novel's preoccupation with domestic space reveals deeper anxieties about social mobility and gender hierarchies that structured nineteenth-century Britain. Through detailed descriptions of parlors, bedrooms, and drawing rooms, authors like George Eliot and the Bront\u00ebs encoded questions about women's agency and economic dependence within architectural minutiae. The carefully maintained home became a site of both refuge and confinement, where moral virtue was performed through interior decoration and household management. Meanwhile, the industrial revolution's displacement of rural populations created new urban anxieties that novelists addressed obliquely through their heroines' struggles to navigate inherited social codes in rapidly changing circumstances. These interwoven concerns\u2014spatial constraint, economic precarity, and moral authenticity\u2014manifest across the period's most celebrated works, suggesting that the novel form itself emerged partly as a medium through which to interrogate the contradictions between public ideology and private experience."
+    },
+    "solution_criteria": [
+      "Extracts both explicit topics (Victorian novel, domestic space, industrial revolution) and implicit themes (social mobility, gender hierarchies, moral authenticity) that require contextual inference",
+      "Identifies overlapping concepts as separate key topics (e.g., home as both refuge and confinement should be recognized as distinct thematic elements)",
+      "Includes author references and period-specific contexts (George Eliot, Bront\u00ebs, nineteenth-century Britain) as relevant topics",
+      "Returns results as a JSON array of strings with no extraneous formatting or explanatory text"
+    ],
+    "task_description": "\nExtract all key topics out of a passage of text from a scholarly article into a JSON array of strings\n",
+    "scenario": "Testing with a humanities passage containing overlapping concepts and implicit themes, where key topics must be inferred from context rather than appearing as explicit terms"
+  },
+  {
+    "prompt_inputs": {
+      "content": "This study employs a multi-modal approach integrating machine learning algorithms with neuroimaging data to investigate neuroplasticity mechanisms in stroke rehabilitation. We utilized functional magnetic resonance imaging (fMRI) combined with diffusion tensor imaging (DTI) to map white matter tract integrity and cortical reorganization patterns across 120 patients over a 12-week motor recovery protocol. Our convolutional neural network architecture, trained on 50,000 annotated brain scans, achieved 94.2% accuracy in predicting motor outcome trajectories. Additionally, we applied graph-theoretic network analysis to quantify changes in functional connectivity within the sensorimotor cortex, supplemented by transcranial magnetic stimulation (TMS) to assess corticospinal excitability. Statistical analysis using mixed-effects modeling revealed significant correlations between DTI metrics, fMRI activation patterns, and clinical Fugl-Meyer scores, suggesting that early white matter reorganization serves as a biomarker for long-term functional recovery."
+    },
+    "solution_criteria": [
+      "Extracts all primary research areas (neuroplasticity, stroke rehabilitation, machine learning, neuroimaging)",
+      "Captures domain-specific methodologies and techniques (fMRI, DTI, CNN, TMS, graph-theoretic analysis)",
+      "Identifies secondary topics and measured outcomes (motor recovery, cortical reorganization, functional connectivity, biomarkers)",
+      "Returns output as a valid JSON array of strings with no duplicate entries"
+    ],
+    "task_description": "\nExtract all key topics out of a passage of text from a scholarly article into a JSON array of strings\n",
+    "scenario": "Testing with a highly technical scientific abstract containing domain-specific jargon, multiple methodologies, and nested subtopics to verify accurate extraction of both primary and secondary research areas"
+  },
+  {
+    "prompt_inputs": {
+      "content": "Recent advances in environmental governance have increasingly incorporated behavioral economics frameworks, particularly in understanding how cognitive biases affect policy compliance. The UNFCCC's carbon pricing mechanisms interact with Kahneman and Tversky's prospect theory to explain divergent national responses to climate mitigation targets. Meanwhile, ecological systems modeling\u2014rooted in the Lotka-Volterra equations and contemporary network theory\u2014reveals that biodiversity loss in the Amazon basin correlates with institutional weakness in land-use enforcement. The tension between neoclassical economic assumptions and evolutionary psychology perspectives has prompted the development of agent-based computational models, exemplified by the work of the Santa Fe Institute, which simulate how stakeholder behavior influences carbon sequestration outcomes across heterogeneous landscapes."
+    },
+    "solution_criteria": [
+      "Identifies core disciplinary topics (behavioral economics, environmental governance, ecological systems modeling) while excluding supporting theoretical references (Kahneman and Tversky, Lotka-Volterra equations)",
+      "Distinguishes between primary research frameworks and secondary illustrative examples",
+      "Includes acronyms and proper nouns only when they represent key topics (UNFCCC, Santa Fe Institute) rather than citations",
+      "Captures competing theoretical frameworks as distinct topics when they represent central tensions in the passage"
+    ],
+    "task_description": "\nExtract all key topics out of a passage of text from a scholarly article into a JSON array of strings\n",
+    "scenario": "Testing with an interdisciplinary passage mixing social science and natural science terminology, including proper nouns, acronyms, and competing theoretical frameworks to ensure the prompt distinguishes between core topics and supporting references"
+  }
+]
