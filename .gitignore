@@ -16,4 +16,3 @@ wheels/
 .pytest_cache
 app.egg-info
 
-*.toml
