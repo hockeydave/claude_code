@@ -1,0 +1,18 @@
+// First, ask Claude to read relevant files
+> Read the math.py and document.py files
+
+// Then ask for planning (not implementation)
+> Plan to implement document_path_to_markdown tool:
+1. Create a function that:
+   - Takes a file path parameter
+   - Validates the file exists  
+   - Determines file type from extension
+   - Reads binary data from file
+   - Leverages existing binary_document_to_markdown function
+   - Returns markdown string
+2. Add appropriate documentation
+3. Register the tool with MCP server
+4. Add tests
+
+// Finally, ask for implementation
+> Implement the plan
