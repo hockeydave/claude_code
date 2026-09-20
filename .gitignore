@@ -1,3 +1,4 @@
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -218,3 +219,22 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+=======
+.DS_Store
+.trees
+
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+*/__init__.py
+
+
+# Virtual environments
+.venv
+.pytest_cache
+app.egg-info
+

@@ -1,0 +1,3 @@
+/clear - Clears conversation history and resets context
+/init - Scans codebase and creates CLAUDE.md documentation
+# - Adds notes to your CLAUDE.md file
