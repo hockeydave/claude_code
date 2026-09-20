@@ -2,6 +2,7 @@ import asyncio
 import base64
 import os
 import shutil
+from pathlib import Path
 import pytest
 from tools.document import binary_document_to_markdown, document_path_to_markdown
 
@@ -193,7 +194,7 @@ class TestDocumentPathToMarkdown:
         assert "## Key Features of this Python SDK" in result
         assert "* Build MCP clients that can connect to any MCP server" in result
 
-    def test_relative_path(self, monkeypatch):
+    def test_relative_path(self, monkeypatch: pytest.MonkeyPatch):
         """A path relative to the current working directory resolves."""
         monkeypatch.chdir(self.FIXTURES_DIR)
 
@@ -201,7 +202,7 @@ class TestDocumentPathToMarkdown:
 
         assert "Model Context Protocol" in result
 
-    def test_uppercase_extension(self, tmp_path):
+    def test_uppercase_extension(self, tmp_path: Path):
         """.PDF is the same format as .pdf.
 
         Fails with a ValueError if the extension is validated without
@@ -212,7 +213,7 @@ class TestDocumentPathToMarkdown:
 
         assert "Model Context Protocol" in document_path_to_markdown(str(target))
 
-    def test_multi_dot_filename(self, tmp_path):
+    def test_multi_dot_filename(self, tmp_path: Path):
         """Only the final suffix is the extension.
 
         Splitting on the first dot would infer "v2", fail validation, and raise.
@@ -222,7 +223,7 @@ class TestDocumentPathToMarkdown:
 
         assert "Model Context Protocol" in document_path_to_markdown(str(target))
 
-    def test_extension_disagreeing_with_content(self, tmp_path):
+    def test_extension_disagreeing_with_content(self, tmp_path: Path):
         """Documents existing behavior: MarkItDown sniffs content, not extension.
 
         A real PDF named .docx converts as a PDF instead of raising, so the
@@ -237,17 +238,17 @@ class TestDocumentPathToMarkdown:
             binary_document_to_markdown(pdf_data, "pdf")
         )
 
-    def test_missing_file_raises(self, tmp_path):
+    def test_missing_file_raises(self, tmp_path: Path):
         """A path that does not exist raises, naming the path."""
         missing = tmp_path / "does_not_exist.pdf"
 
         with pytest.raises(FileNotFoundError, match="does_not_exist.pdf"):
             document_path_to_markdown(str(missing))
 
-    def test_directory_path_raises(self, tmp_path):
+    def test_directory_path_raises(self, tmp_path: Path):
         """A directory is not a document."""
         with pytest.raises(IsADirectoryError):
-            document_path_to_markdown(str(tmp_path))
+            document_path_to_markdown(str(tmp_path: Path))
 
     def test_unsupported_extension_raises(self, tmp_path):
         """The tool accepts PDF and DOCX only.
@@ -255,13 +256,13 @@ class TestDocumentPathToMarkdown:
         Without this gate the call would fall through to MarkItDown, which
         happily converts plain text and many other formats.
         """
-        target = tmp_path / "notes.txt"
+        target: Path = tmp_path / "notes.txt"
         target.write_text("hello world")
 
         with pytest.raises(ValueError, match="txt"):
             document_path_to_markdown(str(target))
 
-    def test_missing_extension_raises(self, tmp_path):
+    def test_missing_extension_raises(self, tmp_path: Path):
         """A file with no extension gives nothing to infer from."""
         target = tmp_path / "mcp_docs"
         shutil.copy(self.PDF_FIXTURE, target)
@@ -281,7 +282,7 @@ class TestDocumentPathToMarkdown:
         with pytest.raises(ValueError):
             document_path_to_markdown(str(target))
 
-    def test_truncated_pdf_does_not_raise(self, tmp_path):
+    def test_truncated_pdf_does_not_raise(self, tmp_path: Path):
         """Documents a known limitation rather than asserting a fix.
 
         A truncated PDF is not detected: MarkItDown returns the raw file bytes
