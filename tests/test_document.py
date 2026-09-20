@@ -248,9 +248,9 @@ class TestDocumentPathToMarkdown:
     def test_directory_path_raises(self, tmp_path: Path):
         """A directory is not a document."""
         with pytest.raises(IsADirectoryError):
-            document_path_to_markdown(str(tmp_path: Path))
+            document_path_to_markdown(str(tmp_path))
 
-    def test_unsupported_extension_raises(self, tmp_path):
+    def test_unsupported_extension_raises(self, tmp_path: Path):
         """The tool accepts PDF and DOCX only.
 
         Without this gate the call would fall through to MarkItDown, which
@@ -270,7 +270,7 @@ class TestDocumentPathToMarkdown:
         with pytest.raises(ValueError):
             document_path_to_markdown(str(target))
 
-    def test_empty_file_raises(self, tmp_path):
+    def test_empty_file_raises(self, tmp_path: Path):
         """An empty file must raise rather than return "".
 
         A silent empty string is indistinguishable from a document that
